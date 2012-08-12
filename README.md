@@ -8,7 +8,7 @@ ____________
 Files of any type can be embed in the compiled code. They can be retreived as:
 
 <ul>
-<li>BitmapData  - using "IMAGE" as serialize() argument. (use this for png, jpeg).</li>
+<li>BitmapData  - using "IMAGE" as serialize() argument. (use this for png, jpeg or gif).</li>
 <li>String      - using "TEXT" as serialize() argument. (use this for anyfile you want to retreive as a string).</li>
 <li>ByteArray   - using "BYTES" as type argument for serialize method. (use this for anything else).</li>
 </ul>
@@ -21,7 +21,12 @@ Files of any type can be embed in the compiled code. They can be retreived as:
 // Assets serialization 
 
 private function init() {
-    EmbedAssets.serialize("images/testimage.png", "IMAGE", "ImgTest");
+    EmbedAssets.serialize("images/test.png", "IMAGE", "ImgFirst");
+	EmbedAssets.serialize("images/this.png", "IMAGE", "ImgSecond");
+	EmbedAssets.serialize("images/oOoO.png", "IMAGE", "ImgThird");
+	EmbedAssets.serialize("images/readme.txt", "TEXT", "TxtReadme");
+	EmbedAssets.serialize("images/config.xml", "TEXT", "TxtConfig");
+	EmbedAssets.serialize("images/flashr.swf", "BYTES", "BTEmbedSwf");
     Lib.stage.addEventListener("ASSETS_LOADED", onAssetsLoaded);
     EmbedAssets.init();
     Resources.init();		
@@ -29,7 +34,14 @@ private function init() {
 
 private function onAssetsLoaded(e:Event):Void 
 {
-	addChild(new Bitmap(Resources.getBitmapData("ImgTest")));
+	addChild(new Bitmap(Resources.getBitmapData("ImgFirst")));
+	addChild(new Bitmap(Resources.getBitmapData("ImgSecond")));
+	addChild(new Bitmap(Resources.getBitmapData("ImgThird")));
+	
+	trace(Resources.getText("TxtReadme"));
+	trace(Xml.parse(Resources.getText("TxtConfig");
+	
+	var swf:ByteArray = Resources.get("BTEmbedSwf");
 }
 
 ```
