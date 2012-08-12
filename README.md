@@ -39,7 +39,7 @@ private function onAssetsLoaded(e:Event):Void
 	addChild(new Bitmap(Resources.getBitmapData("ImgThird")));
 	
 	trace(Resources.getText("TxtReadme"));
-	trace(Xml.parse(Resources.getText("TxtConfig");
+	trace(Xml.parse(Resources.getText("TxtConfig"));
 	
 	var swf:ByteArray = Resources.get("BTEmbedSwf");
 }
