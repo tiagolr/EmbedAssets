@@ -17,7 +17,7 @@ private function onAssetsLoaded(e:Event):Void
 	addChild(new Bitmap(Resources.getBitmapData("ImgTest")));
 }
 
-```hx
+```
 
 
 
