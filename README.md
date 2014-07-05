@@ -1,3 +1,6 @@
+# DEPRECATED
+**Can be used as old macro reference tho**
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 # EmbedAssets
 
 EmbedAssets is an haxe nme tool that allows you to store external assets inside the binaries at compile-time using macros, and retreive them at run-time.
